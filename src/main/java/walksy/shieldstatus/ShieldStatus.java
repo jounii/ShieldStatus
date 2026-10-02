@@ -9,14 +9,14 @@ import net.minecraft.client.resources.model.sprite.SpriteGetter;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemDisplayContext;
-import org.lwjgl.glfw.GLFW;
+import com.mojang.blaze3d.platform.InputConstants;
 import walksy.shieldstatus.render.ShieldSpecialSubmitter;
 
 public class ShieldStatus implements ModInitializer {
 
     private static ShieldSpecialSubmitter shieldSpecialSubmitter;
     private static Player focusedPlayer;
-    public static final KeyMapping toggleSelfState = KeyMappingHelper.registerKeyMapping(new KeyMapping("Toggle SelfState", GLFW.GLFW_KEY_UNKNOWN, new KeyMapping.Category(Identifier.fromNamespaceAndPath("walksy", "key"))));
+    public static final KeyMapping toggleSelfState = KeyMappingHelper.registerKeyMapping(new KeyMapping("Toggle SelfState", InputConstants.UNKNOWN.getValue(), new KeyMapping.Category(Identifier.fromNamespaceAndPath("walksy", "key"))));
 
     @Override
     public void onInitialize() {
